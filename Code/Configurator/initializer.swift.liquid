@@ -1,0 +1,23 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}ModuleInitializer: NSObject {
+
+    func createModule(_ configure: ({{ module_info.name }}ModuleConfigurator) -> Void) -> {{ module_info.name }}ViewController {
+		let configurator = {{ module_info.name }}ModuleConfigurator()
+		configure(configurator)
+		
+		let view = {{ module_info.name }}ViewController()
+		configurator.configureModuleForViewInput(viewInput: view)
+		
+		return view
+	}
+
+}
