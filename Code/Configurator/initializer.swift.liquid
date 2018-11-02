@@ -10,7 +10,7 @@ import UIKit
 
 class {{ module_info.name }}ModuleInitializer: NSObject {
 
-    func createModule(_ configure: ({{ module_info.name }}ModuleConfigurator) -> Void) -> {{ module_info.name }}ViewController {
+    func createModule(_ configure: ({{ module_info.name }}ModuleConfigurator) -> Void = { _ in }) -> {{ module_info.name }}ViewController {
 		let configurator = {{ module_info.name }}ModuleConfigurator()
 		configure(configurator)
 		
