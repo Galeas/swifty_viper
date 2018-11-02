@@ -27,7 +27,7 @@ class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
         let assembly = {{ module_info.name }}Assembly()
 
         //when
-        let result = configurator.createModule { moduleInput in
+        let result = assembly.createModule { moduleInput in
             <#configure your presenter here#>
         }
 
