@@ -35,12 +35,17 @@ class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
         XCTAssertNotNil(viewController.output, "{{ module_info.name }}ViewController is nil after configuration")
         XCTAssertTrue(viewController.output is {{ module_info.name }}Presenter, "output is not {{ module_info.name }}Presenter")
 
+        // swiftlint:disable force_cast
+
         let presenter: {{ module_info.name }}Presenter = viewController.output as! {{ module_info.name }}Presenter
         XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after configuration")
         XCTAssertNotNil(presenter.router, "router in {{ module_info.name }}Presenter is nil after configuration")
         XCTAssertTrue(presenter.router is {{ module_info.name }}Router, "router is not {{ module_info.name }}Router")
 
         let interactor: {{ module_info.name }}Interactor = presenter.interactor as! {{ module_info.name }}Interactor
+
+        // swiftlint:enable force_cast
+
         XCTAssertNotNil(interactor.output, "output in {{ module_info.name }}Interactor is nil after configuration")
     }
 
